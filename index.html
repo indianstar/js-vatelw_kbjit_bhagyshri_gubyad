@@ -1,0 +1,36 @@
+<div id="app"></div>
+<h5> How many rows for your multiplication table : </h5>
+  <input type="text" id="box1" >
+
+  <h4>  How many columns for your multiplication table :  </h4> 
+<input type="text" id="box2" >  
+<br> <br>
+
+<input type="button" value="Display Table"  onclick="multiplication()" /> <br> <br>
+
+<table id="multable" >
+    
+</table>
+
+<script type="text/javascript">
+function multiplication()
+{
+var b1= parseInt(document.getElementById("box1").value);
+var b2= parseInt(document.getElementById("box2").value);
+  var table = document.getElementById ('multable');
+  var output= "";
+
+  for( var i=1;i<=b1;i++)
+  {
+    output+= "<tr>";
+      for(var j=1;j<= b2 ;j++)
+      {
+        output += "<td>" + i*j+"</td>";
+      }
+      output +="</tr>"
+    }
+    table.innerHTML = output;
+
+}
+
+</script>
